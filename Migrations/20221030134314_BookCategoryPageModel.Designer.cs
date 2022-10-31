@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Placinta_Claudiu_Laborator2.Data;
 
@@ -11,9 +12,10 @@ using Placinta_Claudiu_Laborator2.Data;
 namespace Placinta_Claudiu_Laborator2.Migrations
 {
     [DbContext(typeof(Placinta_Claudiu_Laborator2Context))]
-    partial class Placinta_Claudiu_Laborator2ContextModelSnapshot : ModelSnapshot
+    [Migration("20221030134314_BookCategoryPageModel")]
+    partial class BookCategoryPageModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
