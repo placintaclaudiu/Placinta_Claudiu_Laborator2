@@ -29,6 +29,7 @@ namespace Placinta_Claudiu_Laborator2.Pages.Books
             BookD = new BookData();
 
             BookD.Books = await _context.Book
+            .Include(b => b.Author)
             .Include(b => b.Publisher)
             .Include(b => b.BookCategories)
             .ThenInclude(b => b.Category)

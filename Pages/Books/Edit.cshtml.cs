@@ -53,11 +53,11 @@ namespace Placinta_Claudiu_Laborator2.Pages.Books
             var authorList = _context.Author.Select(x => new
             {
                 x.ID,
-                FullName = x.LastName + " " + x.FirstName
+                FullName = x.FirstName + " " + x.LastName
             });
 
 
-            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FirstName");
+            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
