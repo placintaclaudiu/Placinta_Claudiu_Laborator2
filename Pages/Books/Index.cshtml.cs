@@ -28,8 +28,7 @@ namespace Placinta_Claudiu_Laborator2.Pages.Books
         public string AuthorSort { get; set; }
         public string CurrentFilter { get; set; }
 
-        public async Task OnGetAsync(int? id, int? categoryID, string sortOrder, string
-searchString)
+        public async Task OnGetAsync(int? id, int? categoryID, string sortOrder, string searchString)
         {
             BookD = new BookData();
 
@@ -56,12 +55,13 @@ searchString)
                || s.Title.Contains(searchString));
             }
 
-                if (id != null)
+            if (id != null)
             {
                 BookID = id.Value;
                 Book book = BookD.Books
                 .Where(i => i.ID == id.Value).Single();
                 BookD.Categories = book.BookCategories.Select(s => s.Category);
+            }
 
                 switch (sortOrder)
                 {
@@ -73,8 +73,6 @@ searchString)
                         BookD.Books = BookD.Books.OrderByDescending(s =>
                        s.Author.FullName);
                         break;
-                }
-
                 }
             }
 
