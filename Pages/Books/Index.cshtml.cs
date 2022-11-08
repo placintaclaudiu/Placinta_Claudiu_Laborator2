@@ -56,12 +56,13 @@ searchString)
                || s.Title.Contains(searchString));
             }
 
-                if (id != null)
+            if (id != null)
             {
                 BookID = id.Value;
                 Book book = BookD.Books
                 .Where(i => i.ID == id.Value).Single();
                 BookD.Categories = book.BookCategories.Select(s => s.Category);
+            }
 
                 switch (sortOrder)
                 {
@@ -73,8 +74,6 @@ searchString)
                         BookD.Books = BookD.Books.OrderByDescending(s =>
                        s.Author.FullName);
                         break;
-                }
-
                 }
             }
 
