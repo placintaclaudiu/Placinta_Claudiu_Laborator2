@@ -11,6 +11,8 @@ namespace Placinta_Claudiu_Laborator2.Models
         public int ID { get; set; }
         
         [Display(Name = "Book Title")]
+        [StringLength(150, MinimumLength = 3)]
+        [Required(ErrorMessage = "Title is required.")]
         public string Title { get; set; }
        
 
